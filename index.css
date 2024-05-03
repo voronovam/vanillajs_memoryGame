@@ -1,0 +1,129 @@
+:root {
+    --dark-color: #32312d;
+    --light-color: #efeadd;
+    --accent-color: #edcfce;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+svg {
+    fill: currentColor;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.board {
+    min-height: 400px;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid var(--dark-color);
+    background-color: var(--light-color);
+    box-shadow: 10px 9px 0 -2px var(--dark-color);
+    margin-top: 24px;
+}
+
+.board__header {
+    padding: 16px;
+    border-bottom: 2px solid var(--dark-color);
+}
+
+.board__body {
+    padding: 16px;
+}
+
+.board__headline {
+    margin: 0;
+    font-size: 24px;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 8px;
+    justify-content: center;
+}
+
+.list._hidden {
+    display: none;
+}
+
+.list__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    flex-basis: 100px;
+    background-color: var(--light-color);
+    border: 2px solid var(--dark-color);
+    border-radius: 2px;
+    font-size: 0;
+    transition: font-size .1s, background-color .2s;
+    cursor: pointer;
+}
+
+.list__card:hover:not(._open) {
+    background-color: var(--accent-color);
+}
+
+.list__card._open {
+    font-size: 56px;
+}
+
+.timer {
+    display: flex;
+    align-items: baseline;
+    text-align: center;
+    grid-gap: 8px;
+    margin-bottom: 16px;
+}
+
+.timer._hidden {
+    display: none;
+}
+
+.timer__title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.button {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-size: 24px;
+    min-width: 100px;
+    min-height: 40px;
+    border-radius: 2px;
+    border: 2px solid var(--dark-color);
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--accent-color);
+}
+
+.button._hidden {
+    display: none;
+}
