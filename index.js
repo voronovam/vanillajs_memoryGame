@@ -19,8 +19,8 @@ function setTimer () {
         // set timer format 00:00:00
         counter.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`
 
-        const cards = document.querySelectorAll('.list__card')
-        if (cards.length === 0) {
+        const removedCards = document.querySelectorAll('.list__card._removed')
+        if (removedCards.length === cardsLimit) {
             clearInterval(timerInterval) //stop timer
         }
     }, 1000)
@@ -37,7 +37,8 @@ function checkMatch() {
         if (matchingCards.length > 1) { // matched cards more than 1
             matchingCards.forEach(card => {
                 setTimeout(() => {
-                    card.remove(); // remove matched cards
+                    card.textContent = '✖️'
+                    card.classList.add('_removed')
                 }, 200)
             })
         }

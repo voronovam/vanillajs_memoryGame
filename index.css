@@ -25,23 +25,21 @@ body {
     font-size: 16px;
 }
 
-svg {
-    fill: currentColor;
-}
-
 .container {
     max-width: 700px;
     margin: 0 auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .board {
+    position: relative;
     min-height: 400px;
     text-align: center;
     border-radius: 8px;
     border: 2px solid var(--dark-color);
     background-color: var(--light-color);
     box-shadow: 10px 9px 0 -2px var(--dark-color);
-    margin-top: 24px;
 }
 
 .board__header {
@@ -50,7 +48,8 @@ svg {
 }
 
 .board__body {
-    padding: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .board__headline {
@@ -62,7 +61,7 @@ svg {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 8px;
-    justify-content: center;
+    margin-bottom: 24px;
 }
 
 .list._hidden {
@@ -74,7 +73,7 @@ svg {
     align-items: center;
     justify-content: center;
     height: 100px;
-    flex-basis: 100px;
+    flex: 100px;
     background-color: var(--light-color);
     border: 2px solid var(--dark-color);
     border-radius: 2px;
@@ -83,12 +82,17 @@ svg {
     cursor: pointer;
 }
 
-.list__card:hover:not(._open) {
-    background-color: var(--accent-color);
-}
-
 .list__card._open {
     font-size: 56px;
+}
+
+.list__card._removed {
+    font-size: 56px;
+    cursor: default;
+}
+
+.list__card:not(._open):not(._removed):hover {
+    background-color: var(--accent-color);
 }
 
 .timer {
@@ -96,6 +100,7 @@ svg {
     align-items: baseline;
     text-align: center;
     grid-gap: 8px;
+    margin-top: 16px;
     margin-bottom: 16px;
 }
 
@@ -109,6 +114,10 @@ svg {
 }
 
 .button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: var(--light-color);
     color: var(--dark-color);
     font-size: 24px;
