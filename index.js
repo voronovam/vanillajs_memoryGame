@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for (let i = 0; i < cardsLimit; i++) { // create cards
         const card = document.createElement('div')
-        card.classList.add('list__card');
-        card.textContent = shuffledCardContents[i];
-        list.appendChild(card);
+        card.classList.add('list__card')
+        card.textContent = shuffledCardContents[i]
+        list.appendChild(card)
     }
 
     document.querySelectorAll('.list__card').forEach(card => {
@@ -84,4 +84,4 @@ document.addEventListener('DOMContentLoaded', function() {
         timer.classList.remove('_hidden') //show timer
         button.classList.add('_hidden') // hide start button
     })
-});
+})
