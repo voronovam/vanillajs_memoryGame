@@ -1,6 +1,6 @@
 # Memory Game
 
-## [DEMO](https://peppy-monstera-5fbd73.netlify.app/)
+## [DEMO](https://memory-game-vanilla-js-24.netlify.app/)
 
 🍦  Vanilla Js
 
