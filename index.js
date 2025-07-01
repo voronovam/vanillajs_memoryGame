@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const button = document.querySelector('#start')
 
     for (let i = 0; i < cardsLimit; i++) { // create cards
-        const card = document.createElement('div')
+        const card = document.createElement('button')
         card.classList.add('list__card')
         card.textContent = shuffledCardContents[i]
         list.appendChild(card)
